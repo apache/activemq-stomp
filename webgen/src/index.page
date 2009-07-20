@@ -1,15 +1,14 @@
 ---
-title: Empty Index Page
+title: Home
 in_menu: true
-routed_title: New webgen Website
+routed_title: Stomp Protocol
 ---
-## Welcome to *webgen*!
+## Stomp Protocol
 
-This is just a place holder for the start page for your new website!
+The Stomp project is the Streaming Text Orientated Messaging Protocol site (or the Protocol Briefly Known as TTMP and Represented by the symbol :ttmp).
 
-You can start by adjusting the meta information for this page file and adding some real content and
-then adding some more page files!
+## Easy integration
 
-For more information about webgen have a look at the [documentation]!
+Stomp is a very simple and easy to implement protocol, coming from the HTTP school of design; the server side may be hard to implement well, but it is very easy to write a client to get yourself connected. For example you can use Telnet to login to any Stomp broker and interact with it!
 
-[documentation]: http://webgen.rubyforge.org/documentation/index.html
+Many developers have told us that they have managed to write a Stomp client in a couple of hours to integrate their particular language, runtime or platform into the Stomp network.
