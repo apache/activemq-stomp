@@ -1,0 +1,71 @@
+---
+title: Additional Information
+sort_info: 30
+--- name:overview
+
+# Stomp 1.0 - additional information
+Stomp 1.0 - additional information
+
+--- name:content 
+
+This page contains some additional information regarding Stomp protocol version 1.0 (not contained in the specification):
+
+{menu: {used_nodes: fragments}}
+
+#Transaction Handling
+
+Stomp uses named transactions so that many transactions can concurrently occur at the same time. 
+
+The client specifies the name and it is unique to that client.
+
+so: 
+
+	BEGIN
+	transaction: tx1
+	
+	^@
+
+then you can ack or send using the transaction
+
+	ACK
+	message: ID:19283:wheeeee:1234
+	transaction: tx1
+	
+	^@
+
+
+	SEND
+	destination: /queue/a
+	transaction: tx1
+	
+	hello queue a!
+	^@
+
+	ABORT
+	transaction: tx1
+	
+	^@
+
+Would "undo" the ack and send
+
+#Character Encoding
+
+We need to acknowledge character encoding and set some expectations. Much of this is taken from suggestions by SER (whom I don't otherwise know).
+
+First, make header names required to be legal [XML element names](http://www.w3.org/TR/2004/REC-xml11-20040204/#NT-Name). This makes a lot of sense.
+
+Second, specify the default encoding is UTF-8. This makes ASCII a nice subset for telnet purposes. Add an encoding attribute to the CONNECT and CONNECTED frames. The server *should* use the same encoding the client requested on the CONNECT, defaulting to UTF-8 if nothing was specified, but if the client requested an encoding which the server cannot handle, it *must* send back the encoding it will use to handle the session (assuming it could understand the CONNECT frame, of course =)
+
+#Ack Modes
+The default message acknowledgement (when the server can consider the message to have been consumed by a client) is to treat it as acknowledged as soon as it is transmitted. An alternate is to require the client to acknowledge the message explicitely. Amongst other things this offers transactional message consumption and prevents flooding the client to the point of a crash and losing a pile of messages.
+
+To handle this the client may specify and ack header in a subscription request. The default is "auto" the alternate value (there may be more later) is "client". If "client" is used the client must send an ACK frame with the message-id from the message, which may also have a transaction header with an open transaction identifier.
+
+	SUBSCRIBE
+	ack: client
+	destination: /queue/a
+	
+	^@
+
+	ACK
+	message-id: ID:12345

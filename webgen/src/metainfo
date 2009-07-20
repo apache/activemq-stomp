@@ -1,0 +1,9 @@
+--- name:paths
+
+/stomp10/*.page:
+  in_menu: true
+
+--- name:alcn
+
+/stomp10/:
+  title: Stomp 1.0

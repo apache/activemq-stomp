@@ -20,6 +20,7 @@
 <HEAD>
     <LINK href="http://activemq.apache.org/styles/site.css" rel="stylesheet" type="text/css">
     <LINK href="http://activemq.apache.org/styles/type-settings.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="default.css" />
     <SCRIPT src="http://activemq.apache.org/styles/prototype.js" type="text/javascript"></SCRIPT>
     <SCRIPT src="http://activemq.apache.org/styles/rico.js" type="text/javascript"></SCRIPT>
     <SCRIPT src="http://activemq.apache.org/styles/site.js" type="text/javascript"></SCRIPT>
@@ -64,7 +65,7 @@
         <DIV class="top_red_bar">
 
           <DIV id="site-breadcrumbs">
-<A href="" title="Apache ActiveMQ NMS">STOMP</A>&nbsp;&gt;&nbsp;<A href="" title="Index">Home</A>
+			{breadcrumb_trail:}
           </DIV>
           <DIV id="site-quicklinks">
                                                                                                                                                                                                                                     <P><A href="http://activemq.apache.org/discussion-forums.html" rel="nofollow">Forums</A> &#124; <A href="http://activemq.apache.org/support.html" rel="nofollow">Support</A></P>
@@ -83,17 +84,22 @@
           <DIV class="navigation">
             <DIV class="navigation_top">
               <DIV class="navigation_bottom">
-                {menu: {max_levels: 1, used_nodes: files}}
-                <!--
-<H3>
-<A name="Navigation-Overview"></A><A href="overview.html" title="Overview">Overview</A></H3>
-<UL class="alternate" type="square">
-	<LI><A href="" title="Index">Home</A></LI>
-	<LI><A href="faq.html" title="FAQ">FAQ</A></LI>
-	<LI><A href="download.html" title="Download">Download</A></LI>
-</UL>
--->
-                                                                                                                                                                                                                                                                                                                                      </DIV>
+	      {menu: {max_levels: 2, min_levels: 2, used_nodes: files}}
+<!--				<H3>
+					<A name="Navigation-Overview"></A><A href="overview.html" title="Overview">Overview</A></H3>
+					<UL class="alternate" type="square">
+					<LI><A href="" title="Index">Home</A></LI>
+					<LI><A href="faq.html" title="FAQ">FAQ</A></LI>
+					<LI><A href="download.html" title="Download">Download</A></LI>
+					</UL>
+					
+				<H3>
+					<A name="Navigation-Overview"></A><A href="/stomp10/index.html" title="Overview">Stomp 1.0</A></H3>
+					<UL class="alternate" type="square">
+					<LI><A href="/stomp10/specification.html" title="Specification">Specification</A></LI>
+					<LI><A href="/stomp10/additional.html" title="Additional Information">Additional Information</A></LI>
+					</UL>
+ -->									                                                                                                                                                                                                                                                                                                                  </DIV>
             </DIV>
           </DIV>
         </TD>

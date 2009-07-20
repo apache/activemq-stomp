@@ -1,9 +1,9 @@
 ---
-title: Stomp 1.0
-in_menu: true
+title: Specification
+sort_info: 20
 --- name:overview
 
-# Stomp 1.0
+#Stomp Protocol Specification, Version 1.0
 Stomp Protocol Specification, Version 1.0
 
 --- name:content 
