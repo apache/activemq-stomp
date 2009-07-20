@@ -11,6 +11,8 @@
 require 'webgen/webgentask'
 
 task :default => :webgen
+task :rebuild => [:clobber, :webgen]
+task :auto => :auto_webgen
 
 Webgen::WebgenTask.new do |website|
   website.clobber_outdir = true
