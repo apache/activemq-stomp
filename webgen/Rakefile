@@ -40,3 +40,8 @@ task :auto_webgen do
     sleep 2
   end
 end
+
+desc "Deploy the site"
+task :upload do
+  sh %{webgen; scp -r out/* #{ENV['SSH_USER']}@people.apache.org:/www/activemq.apache.org/stomp}
+end
