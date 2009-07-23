@@ -80,15 +80,15 @@ When using the Stomp Protocol with [StompConnect](http://stomp.codehaus.org/Stom
 The following standard JMS Headers are mapped to Stomp as follows; so these headers can be added to a SEND command when sending messages
 
 
-<table>
-<tr><th>Stomp header</th><th>JMS header</th><th>Description</th></tr>
-<tr><td>correlation-id</td><td>JMSCorrelationID</td><td>good consumes will add this header to any responses they send so that entire conversations can be correlated</td></tr>
-<tr><td>expires</td><td>JMSExpiration</td><td>the expiration time of the message</td></tr>
-<tr><td>persistent</td><td>JMSDeliveryMode</td><td>whether or not the message is persistent</td></tr>
-<tr><td>priority</td><td>JMSPriority</td><td>the priority on the message</td></tr>
-<tr><td>reply-to</td><td>JMSReplyTo</td><td>the destination you should send replies to</td></tr>
-<tr><td>type</td><td>JMSType</td><td>sets the type of the message</td></tr>
-</table>
+| Stomp header   | JMS header       | Description                                                                                                 |
+|----------------|------------------|-------------------------------------------------------------------------------------------------------------|
+| correlation-id | JMSCorrelationID | good consumes will add this header to any responses they send so that entire conversations can be correlated|
+| expires        | JMSExpiration    | the expiration time of the message                                                                          |
+| persistent     | JMSDeliveryMode  | whether or not the message is persistent                                                                    |
+| priority       | JMSPriority      | the priority on the message                                                                                 |
+| reply-to       | JMSReplyTo       | the destination you should send replies to                                                                  |
+| type           | JMSType          | sets the type of the message                                                                                |
+
 
 ###Subscription headers
 
