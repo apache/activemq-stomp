@@ -1,0 +1,83 @@
+---
+title: Specification
+sort_info: 20
+--- name:overview
+
+#Stomp Protocol Specification, Version 1.1
+Stomp Protocol Specification, Version 1.1
+
+--- name:content 
+
+#Stomp Protocol Specification, Version 1.1
+
+## Introduction
+
+TODO
+
+## Message Format
+
+TODO
+
+### Header format
+
+TODO
+
+### Body format
+
+TODO
+
+## Message Types
+
+TODO
+
+## Establishing Connection
+
+TODO
+
+### Wire Format Negotiation
+
+TODO
+
+### Virtual Hosting
+
+TODO
+
+## Sending Messages
+
+TODO
+
+## Receiving Messages 
+
+TODO
+
+### Acknowledgment modes
+
+TODO
+
+#### Auto
+
+TODO
+
+#### Client
+
+TODO
+
+#### Individual
+
+TODO
+
+## Transactions
+
+TODO
+
+## Selectors
+
+TODO
+
+## Handling Errors
+
+TODO
+
+## Keep Alive
+
+TODO
