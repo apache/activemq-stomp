@@ -48,6 +48,8 @@ then you can ack or send using the transaction
 
 Would "undo" the ack and send
 
+_Note: you should always discard all the content on your wire (socket) before sending ABORT frame, or those messages can be mistakenly delivered to the client_
+
 #Character Encoding
 
 We need to acknowledge character encoding and set some expectations. Much of this is taken from suggestions by SER (whom I don't otherwise know).
