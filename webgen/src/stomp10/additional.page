@@ -48,7 +48,7 @@ then you can ack or send using the transaction
 
 Would "undo" the ack and send
 
-_Note: you should always discard all the content on your wire (socket) before sending ABORT frame, or those messages can be mistakenly delivered to the client_
+Note that transactions are only related to sending messages and acknowledgments, so there's no such concept such as *receiving messages in transactions*. If you abort the transaction that sent some acks, that doesn't mean that those messages will marked as undelivered and sent again. It just mean that you should try to process them again in your client and acknowledge them when they are successfully processed.
 
 #Character Encoding
 
