@@ -242,12 +242,12 @@ We will use the augmented Backus-Naur Form (BNF) used in the HTTP/1.1 (rfc2616) 
                           | "RECEIPT"
                           | "ERROR"
 
-    header              = <header-name> ":" <header-value>
+    header              = header-name ":" header-value
     header-name         = 1*<any CHAR except LF or ":">
     header-value        = 1*<any CHAR except LF>
 
     content             = text-content | binary-content
     text-content        = 1*<any OCTET except NULL>
-    binary-content      = 1*<OCTECT>
+    binary-content      = 1*OCTECT
 
 This spec is licensed under the [Creative Commons Attribution v2.5](http://creativecommons.org/licenses/by/2.5/)
