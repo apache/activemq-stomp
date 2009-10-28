@@ -219,12 +219,14 @@ We will use the augmented Backus-Naur Form (BNF) used in the HTTP/1.1 (rfc2616) 
     DIGIT               = <any US-ASCII digit "0".."9">
     NULL                = <octect 0>
 
-    frame               = *( LF )
-                          command LF
+    frame-stream        = 1*frame
+
+    frame               = command LF
                           *( header LF )
                           LF
                           [ content ]
                           NULL
+                          *( LF )
 
     command             = client-command | server-command
 
