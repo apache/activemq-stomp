@@ -209,4 +209,45 @@ The server may send ERROR frames if something goes wrong. The error frame should
 
 It is recommended that ERROR frames include a *content-length* header which is a byte count for the length of the message body. If a *content-length* header is included, this number of bytes should be read, regardless of whether or not there are null characters in the body. The frame still needs to be terminated with a null byte, and if a *content-length* is not specified the first null byte encountered signals the end of the frame.
 
+###Augmented BNF
+
+We will use the augmented Backus-Naur Form (BNF) used in the HTTP/1.1 (rfc2616) to define a valid stomp frame:
+
+    LF                  = <US-ASCII LF, linefeed (octect 10)>
+    CHAR                = <any US-ASCII character (octets 0 - 127)>
+    OCTET               = <any 8-bit sequence of data>
+    DIGIT               = <any US-ASCII digit "0".."9">
+    NULL                = <octect 0>
+
+    frame               = *( LF )
+                          command LF
+                          *( header LF )
+                          LF
+                          [ content ]
+                          NULL
+
+    command             = client-command | server-command
+
+    client-command      = "SEND"
+                          | "SUBSCRIBE"
+                          | "UNSUBSCRIBE"
+                          | "BEGIN"
+                          | "COMMIT"
+                          | "ABORT"
+                          | "ACK"
+                          | "DISCONNECT"
+
+    server-command      = "CONNECTED"
+                          | "MESSAGE"
+                          | "RECEIPT"
+                          | "ERROR"
+
+    header              = <header-name> ":" <header-value>
+    header-name         = 1*<any CHAR except LF or ":">
+    header-value        = 1*<any CHAR except LF>
+
+    content             = text-content | binary-content
+    text-content        = 1*<any OCTET except NULL>
+    binary-content      = 1*<OCTECT>
+
 This spec is licensed under the [Creative Commons Attribution v2.5](http://creativecommons.org/licenses/by/2.5/)
